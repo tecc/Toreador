@@ -3,13 +3,13 @@ project(Toreador)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(libs/glad/include)
-include_directories(libs/glfw/include)
-include_directories(include)
-
 add_subdirectory(libs/glfw)
-add_subdirectory(libs/glad)
+add_subdirectory(libs/glad2/cmake)
 
-add_library(Toreador SHARED ) #cpp files only
-target_link_libraries(Toreador glfw)
-target_link_libraries(Toreador glad)
+glad_add_library(glad2 STATIC API gl:core=4.0)
+
+add_library(Toreador SHARED
+    src/Toreador/Util/System.cpp
+    ) #cpp files only
+target_include_directories(Toreador PUBLIC include)
+target_link_libraries(Toreador glfw glad2)
