@@ -39,5 +39,5 @@ void toreador::Application::setupApplication()
 
     glViewport( 0, 0, this->m_settings.startupWindowWidth, this->m_settings.startupWindowHeight );
 
-    /* TODO(Chloe): turn glfwWindow to our own Window wrapper */
+    this->m_window = glfwWindow;
 }

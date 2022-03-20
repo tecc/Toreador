@@ -1,8 +1,8 @@
 #ifndef TOREADOR_APPLICATION_HPP
 #define TOREADOR_APPLICATION_HPP
 
-#include <glad/gl.h>
 #include <GLFW/glfw3.h>
+#include <glad/gl.h>
 #include <string>
 
 namespace toreador {
@@ -27,7 +27,7 @@ namespace toreador {
         std::string m_name;
         toreador::ApplicationSettings m_settings;
 
-        /* TODO(Chloe): Window wrapper */
+        GLFWwindow* m_window;
     };
 
 }// namespace toreador
