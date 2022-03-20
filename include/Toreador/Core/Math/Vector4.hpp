@@ -1,25 +1,25 @@
-#ifndef TOREADOR_VECTOR2_HPP
-#define TOREADOR_VECTOR2_HPP
-
+#ifndef TOREADOR_VECTOR4_HPP
+#define TOREADOR_VECTOR4_HPP
 
 namespace toreador {
     namespace math {
-
-        struct Vector2 {
+        struct Vector4 {
+            float w;
             float x;
             float y;
+            float z;
 
-            Vector2 operator+( float ) const;
-            Vector2 operator+( Vector2 ) const;
+            Vector4 operator+( float ) const;
+            Vector4 operator+( Vector4 ) const;
 
-            Vector2 operator-( float ) const;
-            Vector2 operator-( Vector2 ) const;
+            Vector4 operator-( float ) const;
+            Vector4 operator-( Vector4 ) const;
 
-            Vector2 operator*( float ) const;
-            Vector2 operator*( Vector2 ) const;
+            Vector4 operator*( float ) const;
+            Vector4 operator*( Vector4 ) const;
 
-            Vector2 operator/( float ) const;
-            Vector2 operator/( Vector2 ) const;
+            Vector4 operator/( float ) const;
+            Vector4 operator/( Vector4 ) const;
 
             /**
              *
@@ -40,12 +40,13 @@ namespace toreador {
              * @param vector2 the vector to normalize
              * @return a vector that is the normalized version of the input
              */
-            Vector2 normalize() const;
+            Vector4 normalize() const;
         };
 
-        Vector2 VECTOR2_NULL = { 0.0F, 0.0F };
-        Vector2 VECTOR2_UNIT = { 1.0F, 1.0F };
+        Vector4 VECTOR4_NULL = { 0.0F, 0.0F, 0.0F, 0.0F };
+        Vector4 VECTOR4_UNIT = { 1.0F, 1.0F, 1.0F, 1.0F };
 
     }// namespace math
 }// namespace toreador
-#endif// TOREADOR_VECTOR2_HPP
+
+#endif// TOREADOR_VECTOR4_HPP
